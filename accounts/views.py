@@ -16,7 +16,7 @@ def login_view(request):
 
         if userr:
             login(request, userr)
-            return HttpResponse('Logged In')
+            return redirect('home')
         else:
             return HttpResponse('Incorrect username/password!')
 
