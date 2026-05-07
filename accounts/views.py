@@ -4,6 +4,10 @@ from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 
 def login_view(request):
+
+    if request.user.is_authenticated:
+        return redirect('home')
+
     if request.method == 'POST':
         usr = request.POST.get('usr')
         pwd = request.POST.get('pwd')
