@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BingeHacks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/"></script>
+
+    <style>
+        .inter {
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+        }
+
+        .pacifico {
+            font-family: "Pacifico", sans-serif;
+            font-style: normal;
+        }
+    </style>
 </head>
-<body>
-    <main>
+<body class="inter">
+    <header class="flex w-full justify-between p-2">
+        <h1 class="pacifico text-3xl">Binge<span class="text-indigo-600">Hacks</span></h1>
+
+        <div class="flex justify-end">
+            <a class="p-[5px] text-white rounded-[10px] bg-indigo-500 mr-2" href="">Your hacks</a>
+            <a class="p-[5px] text-white rounded-[10px] bg-green-500 mr-2" href="">Create a hack</a>
+            <a class="p-[5px] text-white rounded-[10px] bg-red-500" href="">Log Out</a>
+        </div>
+    </header>
+    <main class="p-4">
         {% block content %}{% endblock %}
     </main>
 </body>
