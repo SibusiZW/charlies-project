@@ -25,6 +25,7 @@
         <h1 class="pacifico text-3xl mb-4">Binge<span class="text-indigo-500">Hacks</span></h1>
         
         <form method="post">
+            {% csrf_token %}
             <input name="email" placeholder="Enter your email" type="email" class="w-full p-2 border border-indigo-500 rounded-md mb-2" required/>
             <input name="usr" placeholder="Enter your username" type="text" class="w-full p-2 border border-indigo-500 rounded-md mb-2" required/>
             <input name="pwd" placeholder="Enter your password" type="password" class="w-full p-2 border border-indigo-500 rounded-md mb-2" required/>
