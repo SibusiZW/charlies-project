@@ -1,3 +1,13 @@
 {% extends 'base.html' %}
 
-{% block content %}{% endblock %}
+{% block content %}
+    <h1 class="font-semibold text-3xl mb-4">{{ hack.title }}</h1>
+
+    <p class="mb-6">
+        {{ hack.description }}
+    </p>
+
+    <p class="text-gray-500 mb-4">By @{{ hack.user }}</p>
+
+    <a class="bg-indigo-500 p-2 text-white rounded-[10px]" href="/">Return to home page</a>
+{% endblock %}
