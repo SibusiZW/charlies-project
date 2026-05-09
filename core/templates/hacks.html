@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="font-semibold text-3xl mb-4">Your hacks</h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for hack in hacks %}
+            <div class="w-full max-w-[350px] shadow-xl rounded-[10px]">
+                <div class="rounded-md p-[20px] bg-indigo-500 my-0">
+                    <h1 class="space text-white text-3xl">{{ hack.title }}</h1>
+                </div>
+                
+                <div class="p-4 mb-6">
+                    <p class="text-gray-500">By: @{{ hack.user }}</p>
+                </div>
+
+                <div class="p-2">
+                    <a class="bg-blue-500 text-sm p-2 text-white p-[5px] rounded-md" href="{% url 'details' hack.pk %}">
+                        <i class="bi bi-info-circle-fill"></i>
+                        View details
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

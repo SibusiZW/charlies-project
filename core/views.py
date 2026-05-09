@@ -20,3 +20,9 @@ def details_view(request, pk):
     hack = get_object_or_404(Hack, pk=pk)
 
     return render(request, 'details.html', { 'hack': hack })
+
+@login_required(login_url='/auth/login')
+def my_hacks(request):
+    hacks = Hack.objects.filter(user=request.user).order_by('-created_at')
+
+    return render(request, 'hacks.html', { 'hacks': hacks })
