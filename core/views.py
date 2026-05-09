@@ -13,3 +13,7 @@ def home_view(request):
 def signout(request):
     logout(request)
     return redirect('login')
+
+@login_required(login_url='/auth/login')
+def details_view(request, pk):
+    return render(request, 'details.html')
