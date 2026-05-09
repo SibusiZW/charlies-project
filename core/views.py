@@ -33,3 +33,7 @@ def delete_hack(request, pk):
     obj.delete()
 
     return redirect('home')
+
+@login_required(login_url='/auth/login')
+def create_hack(request):
+    return render(request, 'create_hack.html')
