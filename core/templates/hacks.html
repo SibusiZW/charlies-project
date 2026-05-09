@@ -15,9 +15,14 @@
                 </div>
 
                 <div class="p-2">
-                    <a class="bg-blue-500 text-sm p-2 text-white p-[5px] rounded-md" href="{% url 'details' hack.pk %}">
+                    <a class="bg-blue-500 text-sm p-2 text-white p-[5px] rounded-md mr-2" href="{% url 'details' hack.pk %}">
                         <i class="bi bi-info-circle-fill"></i>
                         View details
+                    </a>
+
+                    <a class="bg-red-500 text-sm p-2 text-white p-[5px] rounded-md mb-4" href="{% url 'delete' hack.pk %}">
+                        <i class="bi bi-trash"></i>
+                        Delete Hack
                     </a>
                 </div>
             </div>
