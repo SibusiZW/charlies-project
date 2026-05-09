@@ -36,4 +36,12 @@ def delete_hack(request, pk):
 
 @login_required(login_url='/auth/login')
 def create_hack(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        desc = request.POST.get('desc')
+
+        obj = Hack.objects.create(title=title, description=desc, user=request.user)
+        obj.save()
+        return redirect('home')
+
     return render(request, 'create_hack.html')

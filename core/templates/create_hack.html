@@ -1,1 +1,17 @@
 {% extends 'base.html' %}
+
+{% block content %}
+    <div class="min-h-screen w-full flex flex-col items-center justify-center p-6">
+        <div class="w-full max-w-[350px]">
+            <h1 class="font-semibold text-3xl mb-4">Create Hack</h1>
+
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="title" class="w-full rounded-md p-2 mb-2 border border-indigo-500" placeholder="Enter title" required>
+                <textarea name="desc" placeholder="Enter description" class="w-full rounded-md p-2 mb-2 border border-blue-500" required></textarea>
+
+                <button class="bg-indigo-500 hover:bg-indigo-700 rounded-[10px] text-white w-full p-2" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
